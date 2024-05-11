@@ -1,0 +1,18 @@
+[window]
+
+opacity = 0.8
+
+padding.x = 10
+padding.y = 10
+
+decorations = "Full"
+decorations_theme_variant = "None"
+title = ""
+
+[font]
+normal = { family = "MesloLGS NF", style = "Regular"}
+bold = { family = "MesloLGS NF", style = "Bold"}
+italic = { family = "MesloLGS NF", style = "Italic"}
+bold_italic = { family = "MesloLGS NF", style = "Bold Italic"}
+size = 15.0
+builtin_box_drawing = true
