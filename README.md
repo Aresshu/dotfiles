@@ -10,8 +10,8 @@ My primary operating system is MacOS Sequoia.
 Clone the dotfiles repository.
 
 ```
-$ git clone https://github.com/Aresshu/dotfiles.git ~/dotfiles
-$ cd ~/dotfiles
+$ git clone https://github.com/Aresshu/dotfiles.git ~/.dotfiles
+$ cd ~/.dotfiles
 ```
 Bootstrap.sh is a script to create symbolic links.
 

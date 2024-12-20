@@ -78,6 +78,14 @@ link(){
   else
     echo "${HOME}/.zshrc already exists or is a symlink... Skipping."
   fi
+
+  # Symlink .gitconfig specifically
+  if [ ! -e "${HOME}/.gitconfig" ] && [ ! -L "${HOME}/.gitconfig" ]; then
+    echo "Creating symlink: ${DOTFILES}/.gitconfig -> ${HOME}/.gitconfig"
+    ln -s "${DOTFILES}/.gitconfig" "${HOME}/.gitconfig"
+  else
+    echo "${HOME}/.gitconfig already exists or is a symlink... Skipping."
+  fi
 }
 
 # Print usage if no arguments are provided
