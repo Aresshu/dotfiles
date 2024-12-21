@@ -1,5 +1,5 @@
 [general]
-import = ["themes/catppuccin-macchiato.toml"]
+import = ["themes/gruvbox.toml"]
 #live_config_reload = true
 
 [window]
