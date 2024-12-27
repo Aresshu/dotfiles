@@ -1,0 +1,26 @@
+# Term Tools
+brew "lsd"
+brew "zoxide"
+brew "fzf"
+brew "tree"
+brew "ripgrep"
+
+# Dev Tools
+brew "neovim"
+brew "git"
+
+# macOS Enviroment
+cask "nikitabobko/tap/aerospace"
+
+# Applications
+cask "bitwarden"
+cask "font-hack-nerd-font"
+cask "zen-browser"
+
+# Tap Untils
+tap "homebrew/bundle"
+
+# MAS
+brew "mas"
+mas "Klack", id: 6446206067
+

@@ -1,0 +1,7 @@
+[user]
+  name = Aresshu
+  email = andresdordonez@proton.me
+[core]
+  editor = nvim
+[init]
+  defaultBranch = main
