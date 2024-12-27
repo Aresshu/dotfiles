@@ -9,6 +9,7 @@ brew "ripgrep"
 brew "neovim"
 brew "git"
 brew "bottom"
+brew "rustup"
 
 # macOS Enviroment
 cask "nikitabobko/tap/aerospace"
