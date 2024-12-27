@@ -27,6 +27,11 @@ ctrl-shift-l = 'move right'
 ctrl-shift-minus = 'resize smart -50'
 ctrl-shift-equal = 'resize smart +50'
 
+ctrl-h = 'focus left'
+ctrl-j = 'focus down'
+ctrl-k = 'focus up'
+ctrl-l = 'focus right'
+
 # Focus the specified workspace
 ctrl-1 = 'workspace 1'
 ctrl-2 = 'workspace 2'

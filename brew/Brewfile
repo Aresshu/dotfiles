@@ -8,12 +8,15 @@ brew "ripgrep"
 # Dev Tools
 brew "neovim"
 brew "git"
+brew "bottom"
 
 # macOS Enviroment
 cask "nikitabobko/tap/aerospace"
+cask "linearmouse"
 
 # Applications
 cask "bitwarden"
+cask "discord"
 cask "font-hack-nerd-font"
 cask "zen-browser"
 
