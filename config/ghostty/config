@@ -13,7 +13,7 @@ window-inherit-working-directory = true
 shell-integration = zsh
 shell-integration-features = no-cursor,no-title
 
-font-size = 17
+font-size = 14
 
 # Cursor
 cursor-style = block

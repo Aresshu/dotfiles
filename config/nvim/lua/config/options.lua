@@ -1,5 +1,10 @@
 local opt = vim.opt
 
+-- Sync OS Clipboard
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
+
 -- Indentation
 opt.expandtab = true
 opt.smartindent = true
@@ -18,3 +23,7 @@ opt.wrap = true
 -- Number
 opt.number = true
 opt.relativenumber = false
+
+-- Save Undo History
+opt.undofile = true
+

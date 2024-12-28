@@ -1,6 +1,13 @@
 local map = vim.keymap.set
 local telescope_builtin = require('telescope.builtin')
 
+-- General Keymaps
+-- Clear highlights when searching
+map('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Diagnostics
+map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics quickfix list' })
+
 -- Telescope Keymaps
 map('n', '<leader>ff', telescope_builtin.find_files, { desc = 'Telescope Find Files' })
 map('n', '<leader>fg', telescope_builtin.live_grep, { desc = 'Telescope Live Grep' })
