@@ -1,24 +1,24 @@
 # Term Tools
+brew "bottom"
 brew "lsd"
-brew "zoxide"
 brew "fzf"
 brew "tree"
 brew "ripgrep"
+brew "zoxide"
 
 # Dev Tools
-brew "neovim"
 brew "git"
-brew "bottom"
+brew "neovim"
 brew "rustup"
 
 # macOS Enviroment
+cask "font-hack-nerd-font"
 cask "nikitabobko/tap/aerospace"
-cask "linearmouse"
 
 # Applications
 cask "bitwarden"
 cask "discord"
-cask "font-hack-nerd-font"
+cask "linearmouse"
 cask "zen-browser"
 
 # Tap Utils
