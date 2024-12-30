@@ -13,7 +13,10 @@ window-inherit-working-directory = true
 shell-integration = zsh
 shell-integration-features = no-cursor,no-title
 
-font-size = 14
+# Hide macos-titlebar
+macos-titlebar-style = hidden
+
+font-size = 16
 
 # Cursor
 cursor-style = block
@@ -21,8 +24,8 @@ cursor-style-blink = false
 
 # Background
 background-blur-radius = 5
-background-opacity = 0.95
+background-opacity = 0.98
 
 # Theme
-theme = GruvboxDark
+theme = gruber-darker
 window-theme = dark
