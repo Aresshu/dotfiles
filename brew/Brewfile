@@ -6,6 +6,7 @@ brew "tree"
 brew "ripgrep"
 brew "zoxide"
 brew "starship"
+brew "tmux"
 
 # Dev Tools
 brew "git"

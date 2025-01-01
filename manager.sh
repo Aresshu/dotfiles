@@ -64,6 +64,23 @@ link(){
     fi
   done
 
+  #Tmux files
+  # find "${DOTFILES}/tmux" -maxdepth 1 -mindepth 1 2>/dev/null | while IFS= read -r file;
+  # do
+  #   target="${HOME}/$(basename "$file")"
+  #   if [ -e "${target}" ] || [ -L "${target}" ]; then
+  #     echo "${RED}Skipping ~${target#"$HOME"} already exists or is a symlink.${NC}"
+  #     continue
+  #   fi
+  #
+  #   echo "${GREEN}Creating symlink${NC}: ${file} -> ${target}"
+  #   if ln -s "${file}" "${target}"; then
+  #     echo "${GREEN}Symlink created successfully.${NC}"
+  #   else
+  #     echo "${RED}ERROR: Failed to create symlink for ${file}${NC}"
+  #   fi
+  # done
+
 }
 
 if [[ $# -eq 0 ]]; then
