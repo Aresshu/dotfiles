@@ -5,6 +5,7 @@ brew "fzf"
 brew "tree"
 brew "ripgrep"
 brew "zoxide"
+brew "starship"
 
 # Dev Tools
 brew "git"
