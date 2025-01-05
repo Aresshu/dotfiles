@@ -12,10 +12,13 @@ brew "tmux"
 brew "git"
 brew "neovim"
 brew "rustup"
+brew "node@22"
 
 # macOS Enviroment
 cask "font-hack-nerd-font"
 cask "nikitabobko/tap/aerospace"
+cask "tor-browser"
+cask "calibre"
 
 # Applications
 cask "bitwarden"
