@@ -19,7 +19,7 @@ return {
     })
 
     require("mason-lspconfig").setup({
-      ensure_installed = { "lua_ls", "rust_analyzer", "zls" },
+      ensure_installed = { "lua_ls", "rust_analyzer", "zls", "ts_ls" },
       automatic_installation = true,
       handlers = {
         function (server_name) -- default handler (optional)
@@ -59,6 +59,12 @@ return {
         ['zls'] = function ()
           require('lspconfig').zls.setup {}
         end,
+
+        ["ts_ls"] = function ()
+          require("lspconfig").ts_ls.setup {}
+        end,
+
+
       }
     })
   end,
