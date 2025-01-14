@@ -9,6 +9,8 @@ return {
         'lua',
         'rust',
         'zig',
+        'typescript',
+        'tsx',
       },
 
       sync_install = false,
