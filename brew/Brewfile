@@ -25,6 +25,7 @@ cask "bitwarden"
 cask "discord"
 cask "linearmouse"
 cask "zen-browser"
+cask "mullvadvpn"
 
 # Tap Utils
 tap "homebrew/bundle"

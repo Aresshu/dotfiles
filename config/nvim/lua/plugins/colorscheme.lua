@@ -1,16 +1,27 @@
 return {
-  "aktersnurra/no-clown-fiesta.nvim",
-  priority = 1000,
+  "ficcdaf/ashen.nvim",
   lazy = false,
+  priority = 1000,
   config = function()
-    require('no-clown-fiesta').setup({
+    require('ashen').setup({
       transparent = true,
-      styles = {},
     })
-    vim.cmd('colorscheme no-clown-fiesta')
+    vim.cmd("colorscheme ashen")
   end,
 }
-
+-- return {
+--   "aktersnurra/no-clown-fiesta.nvim",
+--   priority = 1000,
+--   lazy = false,
+--   config = function()
+--     require('no-clown-fiesta').setup({
+--       transparent = true,
+--       styles = {},
+--     })
+    -- vim.cmd('colorscheme no-clown-fiesta')
+--   end,
+-- }
+--
 -- "ellisonleao/gruvbox.nvim",
   -- lazy = false,
   -- priority = 1000,
