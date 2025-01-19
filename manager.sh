@@ -21,7 +21,6 @@ link(){
       echo "${RED}Skipping ~${target#"$HOME"} already exists or is a symlink.${NC}"
       continue
     fi
-
     echo "${GREEN}Creating symlink${NC}: ${file} -> ${target}"
     if ln -s "${file}" "${target}"; then
       echo "${GREEN}Symlink created successfully.${NC}"
@@ -38,7 +37,6 @@ link(){
       echo "${RED}Skipping ~${target#"$HOME"} already exists or is a symlink.${NC}"
       continue
     fi
-
     echo "${GREEN}Creating symlink${NC}: ${file} -> ${target}"
     if ln -s "${file}" "${target}"; then
       echo "${GREEN}Symlink created successfully.${NC}"
@@ -55,6 +53,29 @@ link(){
       echo "${RED}Skipping ~${target#"$HOME"} already exists or is a symlink.${NC}"
       continue
     fi
+    
+    echo "${GREEN}Creating symlink${NC}: ${file} -> ${target}"
+    if ln -s "${file}" "${target}"; then
+      echo "${GREEN}Symlink created successfully.${NC}"
+    else
+      echo "${RED}ERROR: Failed to create symlink for ${file}${NC}"
+    fi
+  done
+
+  #Zig files
+  find "${DOTFILES}/zig" -maxdepth 1 -mindepth 1 2>/dev/null | while IFS= read -r file;
+  do
+    # Checking if zig directory exists
+    if [ ! -e "${HOME}/.zig" ]; then
+      echo "${RED}ERROR: ~/.zig directory does not exist"
+      break
+    fi
+
+    target="${HOME}/.zig/$(basename "$file")"
+    if [ -e "${target}" ] || [ -L "${target}" ]; then
+      echo "${RED}Skipping ~${target#"$HOME"} already exists or is a symlink.${NC}"
+      continue
+    fi
 
     echo "${GREEN}Creating symlink${NC}: ${file} -> ${target}"
     if ln -s "${file}" "${target}"; then
@@ -63,6 +84,7 @@ link(){
       echo "${RED}ERROR: Failed to create symlink for ${file}${NC}"
     fi
   done
+
 
   #Tmux files
   # find "${DOTFILES}/tmux" -maxdepth 1 -mindepth 1 2>/dev/null | while IFS= read -r file;

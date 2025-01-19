@@ -18,7 +18,6 @@ brew "node@22"
 cask "font-hack-nerd-font"
 cask "nikitabobko/tap/aerospace"
 cask "tor-browser"
-cask "calibre"
 
 # Applications
 cask "bitwarden"
