@@ -11,6 +11,8 @@ return {
         'zig',
         'typescript',
         'tsx',
+        'go',
+        'gomod',
       },
 
       sync_install = false,
