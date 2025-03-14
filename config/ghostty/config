@@ -24,7 +24,7 @@ cursor-style-blink = false
 
 # Background
 background-blur-radius = 5
-background-opacity = 0.98
+background-opacity = 1
 
 # Theme
 theme = gruber-darker
