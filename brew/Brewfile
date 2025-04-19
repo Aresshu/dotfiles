@@ -17,7 +17,6 @@ brew "node@22"
 # macOS Enviroment
 cask "font-hack-nerd-font"
 cask "nikitabobko/tap/aerospace"
-cask "tor-browser"
 
 # Applications
 cask "bitwarden"
