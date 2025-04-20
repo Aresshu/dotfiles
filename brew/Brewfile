@@ -12,6 +12,9 @@ brew "tmux"
 brew "git"
 brew "neovim"
 
+# Languages
+brew "go"
+
 # macOS Enviroment
 cask "font-hack-nerd-font"
 cask "nikitabobko/tap/aerospace"
