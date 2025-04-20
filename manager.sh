@@ -2,6 +2,7 @@
 
 DOTFILES="${PWD}"
 CONFIG_HOME="${HOME}/.config"
+ZIG_HOME="${HOME}/.zig"
 
 GREEN='\033[0;32m'
 RED='\033[0;31m'
@@ -30,6 +31,7 @@ main() {
       link_group "$DOTFILES/config" "$CONFIG_HOME"
       link_group "$DOTFILES/zsh" "$HOME"
       link_group "$DOTFILES/git" "$HOME"
+      link_group "$DOTFILES/zig" "$ZIG_HOME"
       ;;
     *)
       echo "Usage: $0 link"
