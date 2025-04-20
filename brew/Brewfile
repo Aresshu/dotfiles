@@ -11,8 +11,6 @@ brew "tmux"
 # Dev Tools
 brew "git"
 brew "neovim"
-brew "rustup"
-brew "node@22"
 
 # macOS Enviroment
 cask "font-hack-nerd-font"
@@ -26,7 +24,7 @@ cask "zen-browser"
 cask "mullvadvpn"
 
 # Tap Utils
-tap "homebrew/bundle"
+# tap "homebrew/bundle"
 
 # MAS
 brew "mas"

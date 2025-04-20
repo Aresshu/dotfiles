@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 DOTFILES="${PWD}"
 CONFIG_HOME="${HOME}/.config"
@@ -7,115 +7,34 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-link(){
-  if [ ! -d "${CONFIG_HOME}" ]; then
-    echo "Creating ${CONFIG_HOME} directory..."
-    mkdir -p "${CONFIG_HOME}"
-  fi
+link_group() {
+  local src=$1 dest=$2
+  [ ! -d "$dest" ] && echo "Creating $dest..." && mkdir -p "$dest"
 
-  #.config files
-  find "${DOTFILES}/config" -maxdepth 1 -mindepth 1 2>/dev/null | while IFS= read -r file;
-  do
-    target="${CONFIG_HOME}/$(basename "$file")"
-    if [ -e "${target}" ] || [ -L "${target}" ]; then
-      echo "${RED}Skipping ~${target#"$HOME"} already exists or is a symlink.${NC}"
-      continue
-    fi
-    echo "${GREEN}Creating symlink${NC}: ${file} -> ${target}"
-    if ln -s "${file}" "${target}"; then
-      echo "${GREEN}Symlink created successfully.${NC}"
+  find "$src" -mindepth 1 -maxdepth 1 2>/dev/null | while IFS= read -r file; do
+    local base=$(basename "$file")
+    local target="${dest}/${base}"
+
+    if [ -e "$target" ] || [ -L "$target" ]; then
+      echo -e "${RED}Skipping ~${target#"$HOME"} already exists or is a symlink.${NC}"
     else
-      echo "${RED}ERROR: Failed to create symlink for ${file}${NC}"
+      echo -e "${GREEN}Creating symlink${NC}: $file -> $target"
+      ln -s "$file" "$target" && echo -e "${GREEN}Symlink created.${NC}" || echo -e "${RED}ERROR: Failed to symlink.${NC}"
     fi
   done
-
-  #ZSH files
-  find "${DOTFILES}/zsh" -maxdepth 1 -mindepth 1 2>/dev/null | while IFS= read -r file;
-  do
-    target="${HOME}/$(basename "$file")"
-    if [ -e "${target}" ] || [ -L "${target}" ]; then
-      echo "${RED}Skipping ~${target#"$HOME"} already exists or is a symlink.${NC}"
-      continue
-    fi
-    echo "${GREEN}Creating symlink${NC}: ${file} -> ${target}"
-    if ln -s "${file}" "${target}"; then
-      echo "${GREEN}Symlink created successfully.${NC}"
-    else
-      echo "${RED}ERROR: Failed to create symlink for ${file}${NC}"
-    fi
-  done
-
-  #Git files
-  find "${DOTFILES}/git" -maxdepth 1 -mindepth 1 2>/dev/null | while IFS= read -r file;
-  do
-    target="${HOME}/$(basename "$file")"
-    if [ -e "${target}" ] || [ -L "${target}" ]; then
-      echo "${RED}Skipping ~${target#"$HOME"} already exists or is a symlink.${NC}"
-      continue
-    fi
-    
-    echo "${GREEN}Creating symlink${NC}: ${file} -> ${target}"
-    if ln -s "${file}" "${target}"; then
-      echo "${GREEN}Symlink created successfully.${NC}"
-    else
-      echo "${RED}ERROR: Failed to create symlink for ${file}${NC}"
-    fi
-  done
-
-  #Zig files
-  find "${DOTFILES}/zig" -maxdepth 1 -mindepth 1 2>/dev/null | while IFS= read -r file;
-  do
-    # Checking if zig directory exists
-    if [ ! -e "${HOME}/.zig" ]; then
-      echo "${RED}ERROR: ~/.zig directory does not exist"
-      break
-    fi
-
-    target="${HOME}/.zig/$(basename "$file")"
-    if [ -e "${target}" ] || [ -L "${target}" ]; then
-      echo "${RED}Skipping ~${target#"$HOME"} already exists or is a symlink.${NC}"
-      continue
-    fi
-
-    echo "${GREEN}Creating symlink${NC}: ${file} -> ${target}"
-    if ln -s "${file}" "${target}"; then
-      echo "${GREEN}Symlink created successfully.${NC}"
-    else
-      echo "${RED}ERROR: Failed to create symlink for ${file}${NC}"
-    fi
-  done
-
-
-  #Tmux files
-  # find "${DOTFILES}/tmux" -maxdepth 1 -mindepth 1 2>/dev/null | while IFS= read -r file;
-  # do
-  #   target="${HOME}/$(basename "$file")"
-  #   if [ -e "${target}" ] || [ -L "${target}" ]; then
-  #     echo "${RED}Skipping ~${target#"$HOME"} already exists or is a symlink.${NC}"
-  #     continue
-  #   fi
-  #
-  #   echo "${GREEN}Creating symlink${NC}: ${file} -> ${target}"
-  #   if ln -s "${file}" "${target}"; then
-  #     echo "${GREEN}Symlink created successfully.${NC}"
-  #   else
-  #     echo "${RED}ERROR: Failed to create symlink for ${file}${NC}"
-  #   fi
-  # done
-
 }
 
-if [[ $# -eq 0 ]]; then
-  echo "Usage: $0 <command>"
-  echo "Available commands: link"
-  exit 1
-fi 
+main() {
+  case "$1" in
+    link)
+      link_group "$DOTFILES/config" "$CONFIG_HOME"
+      link_group "$DOTFILES/zsh" "$HOME"
+      link_group "$DOTFILES/git" "$HOME"
+      ;;
+    *)
+      echo "Usage: $0 link"
+      ;;
+  esac
+}
 
-case "$1" in
-  link)
-    link
-    ;;
-  *)
-    echo "Error: Unknown command '$1'"
-    ;;
-esac
+main "$@"
