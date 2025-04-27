@@ -13,6 +13,7 @@ return {
         'tsx',
         'go',
         'gomod',
+        'html',
       },
 
       sync_install = false,
