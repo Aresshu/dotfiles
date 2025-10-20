@@ -16,7 +16,7 @@ shell-integration-features = no-cursor,no-title
 # Hide macos-titlebar
 macos-titlebar-style = hidden
 
-font-size = 16
+font-size = 15
 
 # Cursor
 cursor-style = block
@@ -27,5 +27,5 @@ background-blur-radius = 5
 background-opacity = 1
 
 # Theme
-theme = gruber-darker
+theme = Black Metal (Immortal) 
 window-theme = dark

@@ -14,6 +14,7 @@ return {
         'go',
         'gomod',
         'html',
+        'svelte',
       },
 
       sync_install = false,

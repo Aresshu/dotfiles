@@ -55,10 +55,11 @@ ctrl-shift-8 = 'move-node-to-workspace 8'
 ctrl-shift-9 = 'move-node-to-workspace 9'
 
 # Call backs
-# [[on-window-detected]]
-#     if.app-id = 'app.zen-browser.zen'
-#     run = ['layout floating']
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
+if.window-title-regex-substring = 'Picture-in-Picture'
+run = ['layout floating']
 
 [[on-window-detected]]
-    if.app-id = 'com.apple.QuickTimePlayerX'
+    if.app-id = 'com.fenresearch.brightershores'
     run = ['layout floating']
