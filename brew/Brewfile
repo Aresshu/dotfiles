@@ -12,22 +12,15 @@ brew "tmux"
 brew "git"
 brew "neovim"
 
-# Languages
-brew "go"
-
 # macOS Enviroment
 cask "font-hack-nerd-font"
 cask "nikitabobko/tap/aerospace"
 
 # Applications
 cask "bitwarden"
-cask "discord"
 cask "linearmouse"
 cask "zen-browser"
 cask "mullvadvpn"
-
-# Tap Utils
-# tap "homebrew/bundle"
 
 # MAS
 brew "mas"
