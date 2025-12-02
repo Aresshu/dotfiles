@@ -1,3 +1,6 @@
+# Term Tools
+brew "lsd"
+
 # Dev Tools
 brew "git"
 brew "neovim"

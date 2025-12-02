@@ -38,6 +38,7 @@ main(){
 	case "${1:-}" in
 		link)
 			link_group "$DOTFILES/config" "$CONFIG_HOME"
+			link_group "$DOTFILES/zsh" "$HOME"
 			;;
 		*)
 			echo "Usage: $0 link"
