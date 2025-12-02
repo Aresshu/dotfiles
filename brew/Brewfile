@@ -19,7 +19,6 @@ cask "nikitabobko/tap/aerospace"
 # Applications
 cask "bitwarden"
 cask "linearmouse"
-cask "zen-browser"
 cask "mullvadvpn"
 
 # MAS
