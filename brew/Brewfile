@@ -1,5 +1,7 @@
 # Term Tools
 brew "lsd"
+brew "fzf"
+brew "zoxide"
 
 # Dev Tools
 brew "git"
