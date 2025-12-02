@@ -1,5 +1,3 @@
-# Term Tools
-
 # Dev Tools
 brew "git"
 brew "neovim"
@@ -9,9 +7,10 @@ cask "font-hack-nerd-font"
 cask "nikitabobko/tap/aerospace"
 
 # Applications
+cask "ghostty"
 cask "bitwarden"
 
 # MAS
-brew "mas"
-mas "Klack", id: 6446206067
+# brew "mas"
+# mas "Klack", id: 6446206067
 
