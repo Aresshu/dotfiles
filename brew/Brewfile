@@ -2,6 +2,7 @@
 brew "lsd"
 brew "fzf"
 brew "zoxide"
+brew "ripgrep"
 
 # Dev Tools
 brew "git"
@@ -14,6 +15,7 @@ cask "nikitabobko/tap/aerospace"
 # Applications
 cask "ghostty"
 cask "bitwarden"
+cask "mullvad-vpn"
 
 # MAS
 # brew "mas"
