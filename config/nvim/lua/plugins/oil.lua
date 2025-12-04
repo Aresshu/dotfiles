@@ -1,8 +1,12 @@
 local opts = {}
 
+local function keymaps()
+  vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+end
+
 local function config()
   require("oil").setup(opts)
-  vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+  keymaps()
 end
 
 return {
