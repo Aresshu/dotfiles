@@ -4,6 +4,7 @@ brew "fzf"
 brew "zoxide"
 brew "ripgrep"
 brew "tmux"
+brew "starship"
 
 # Dev Tools
 brew "git"
