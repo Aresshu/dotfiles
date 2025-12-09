@@ -3,6 +3,7 @@ brew "lsd"
 brew "fzf"
 brew "zoxide"
 brew "ripgrep"
+brew "tmux"
 
 # Dev Tools
 brew "git"
@@ -16,6 +17,7 @@ cask "nikitabobko/tap/aerospace"
 cask "ghostty"
 cask "bitwarden"
 cask "mullvad-vpn"
+cask "obsidian"
 
 # MAS
 # brew "mas"
