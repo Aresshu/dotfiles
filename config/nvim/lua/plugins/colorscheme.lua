@@ -1,11 +1,12 @@
-local opts = {
+local no_clown_opts = {
   theme = "dark",
   transparent = true,
   styles = {},
 }
 
 local function config()
-  require("no-clown-fiesta").setup(opts) 
+  require("no-clown-fiesta").setup(no_clown_opts)
+
   vim.cmd('colorscheme no-clown-fiesta')
 end
 
@@ -15,4 +16,3 @@ return {
   config = config,
   lazy = false,
 }
-
