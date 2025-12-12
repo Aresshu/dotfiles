@@ -13,7 +13,15 @@ local capabilities = require('blink.cmp').get_lsp_capabilities()
 
 local lsp_opts = {
   ensure_installed = {
+    -- Languages
     "lua_ls",
+    "ts_ls",
+    "rust_analyzer",
+
+    -- Frameworks
+    "astro",
+    "svelte",
+    "cssls",
   },
   automatic_installation = true,
   handlers = {
@@ -21,6 +29,7 @@ local lsp_opts = {
       require("lspconfig")[server_name].setup{capabilities}
     end,
 
+    -- Lua
     ["lua_ls"] = function ()
       require("lspconfig").lua_ls.setup {
         settings = {
@@ -32,6 +41,25 @@ local lsp_opts = {
         }
       }
     end,
+
+    -- Rust
+    ["rust_analyzer"] = function ()
+      require("lspconfig").rust_analyzer.setup {
+        capabilities = capabilities,
+        settings = {
+          ["rust-analyzer"] = {
+            checkOnSave = {
+              command = "clippy",
+            },
+            cargo = {
+              allFeatures = true,
+            },
+          },
+        },
+      }
+    end,
+
+    -- Other Languages
   }
 }
 

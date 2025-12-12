@@ -1,6 +1,17 @@
 local opts = {
   ensure_installed = {
+    -- Languages
     "lua",
+    "javascript",
+    "typescript",
+    "html",
+    "css",
+    "sql",
+    "rust",
+
+    -- Frameworks
+    "svelte",
+    "astro",
   },
   indent = { enable = true },
 }
